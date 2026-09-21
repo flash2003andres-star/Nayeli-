@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Nayeli Pamela 🌻</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Georgia,serif;
+    background:#0d0b08;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
+.inicio{
+    position:fixed;
+    inset:0;
+    z-index:10;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,213,64,.15),
+        #0d0b08 55%);
+    transition:opacity 2s ease, visibility 2s;
+}
+
+.inicio.ocultar{
+    opacity:0;
+    visibility:hidden;
+}
+
+.pequeno{
+    font-size:16px;
+    letter-spacing:3px;
+    color:#ffe27a;
+    opacity:0;
+    animation:aparecer 2s forwards;
+}
+
+.flor{
+    font-size:100px;
+    margin:20px;
+    opacity:0;
+    transform:scale(.2);
+    animation:
+        crecerFlor 3s ease forwards,
+        balancear 3s ease-in-out 3s infinite;
+}
+
+@keyframes crecerFlor{
+    0%{
+        opacity:0;
+        transform:scale(.2);
+    }
+    70%{
+        opacity:1;
+        transform:scale(1.15);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes balancear{
+    0%,100%{transform:rotate(-4deg);}
+    50%{transform:rotate(4deg);}
+}
+
+.tituloInicio{
+    font-size:34px;
+    color:#ffd54f;
+    margin:5px;
+    opacity:0;
+    animation:aparecer 2s 2s forwards;
+}
+
+.textoInicio{
+    font-size:17px;
+    opacity:0;
+    animation:aparecer 2s 3s forwards;
+}
+
+@keyframes aparecer{
+    to{opacity:1;}
+}
+
+.botonInicio{
+    margin-top:30px;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    background:#f5bd19;
+    color:#382800;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    opacity:0;
+    animation:aparecer 2s 4s forwards;
+    box-shadow:0 0 25px rgba(255,205,50,.35);
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.contenedor{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 15px;
+    background:
+        radial-gradient(circle at top,
+        #fff3a6,
+        #ffe477 30%,
+        #f7ca39 70%,
+        #d9a900);
+}
+
+.carta{
+    width:100%;
+    max-width:560px;
+    background:rgba(255,255,255,.96);
+    color:#493900;
+    border-radius:28px;
+    padding:30px 24px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+    text-align:center;
+    animation:subirCarta 1.5s ease;
+}
+
+@keyframes subirCarta{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.flores{
+    font-size:55px;
+    margin-bottom:5px;
+}
+
+h1{
+    color:#d69d00;
+    font-size:31px;
+    margin:5px 0;
+}
+
+.subtitulo{
+    color:#876700;
+    font-style:italic;
+}
+
+.contador{
+    margin:22px 0;
+    padding:16px;
+    border-radius:18px;
+    background:#fff4bd;
+    border:1px solid #f4d75e;
+}
+
+.contadorTitulo{
+    font-size:14px;
+    color:#8a6900;
+}
+
+#tiempo{
+    font-weight:bold;
+    color:#c58c00;
+    font-size:18px;
+}
+
+.mensaje{
+    text-align:left;
+    font-size:18px;
+    line-height:1.75;
+}
+
+.mensaje p{
+    margin:18px 0;
+}
+
+.destacado{
+    text-align:center;
+    font-size:23px;
+    font-weight:bold;
+    color:#d39700;
+}
+
+.final{
+    margin-top:25px;
+    padding:20px;
+    border-radius:20px;
+    background:#fff4bd;
+    font-size:21px;
+    color:#b47d00;
+    font-weight:bold;
+}
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazon{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    z-index:20;
+    animation:subir 7s linear forwards;
+}
+
+@keyframes subir{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petalo{
+    position:fixed;
+    top:-30px;
+    pointer-events:none;
+    z-index:15;
+    animation:caer linear forwards;
+}
+
+@keyframes caer{
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+.oculto{
+    display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     PANTALLA DE SORPRESA
+========================= -->
+
+<section class="inicio" id="inicio">
+
+    <div class="pequeno">
+        PARA ALGUIEN MUY ESPECIAL
+    </div>
+
+    <div class="flor">
+        🌻
+    </div>
+
+    <h1 class="tituloInicio">
+        Nayeli Pamela
+    </h1>
+
+    <p class="textoInicio">
+        Tengo algo preparado para ti...
+    </p>
+
+    <button class="botonInicio" onclick="abrirCarta()">
+        💛 Tengo algo para ti
+    </button>
+
+</section>
+
+
+<!-- =========================
+     CARTA
+========================= -->
+
+<main class="contenedor oculto" id="cartaPagina">
+
+    <article class="carta">
+
+        <div class="flores">
+            🌻🌻🌻
+        </div>
+
+        <h1>
+            Para Nayeli Pamela ❤️
+        </h1>
+
+        <div class="subtitulo">
+            Una pequeña parte de todo lo que siento por ti
+        </div>
+
+
+        <!-- CONTADOR -->
+
+        <div class="contador">
+
+            <div class="contadorTitulo">
+                Desde aquel 25 de mayo han pasado...
+            </div>
+
+            <br>
+
+            <div id="tiempo">
+                Calculando...
+            </div>
+
+        </div>
+
+
+        <!-- CARTA -->
+
+        <div class="mensaje">
+
+            <p>
+                Mi amor,
+            </p>
+
+            <p>
+                Quería hacerte este pequeño detalle porque hay
+                sentimientos que son demasiado grandes para poder
+                explicarlos solamente con palabras.
+            </p>
+
+            <p>
+                Desde el <strong>25 de mayo</strong>, algo cambió dentro
+                de mí. Han pasado aproximadamente cinco meses desde
+                que comenzó todo esto que siento por ti, y mientras más
+                pasa el tiempo, más me doy cuenta de lo importante que
+                eres para mí.
+            </p>
+
+            <p class="destacado">
+                Te amo muchísimo, Nayeli. ❤️
+            </p>
+
+            <p>
+                Te amo por quién eres, por tu forma de ser conmigo,
+                por tus palabras, por tus abrazos y por todos esos
+                pequeños momentos que quizás parecen simples, pero
+                para mí significan muchísimo.
+            </p>
+
+            <p>
+                Cuando no estás conmigo, te extraño.
+                Extraño tenerte cerca, hablar contigo, abrazarte,
+                mirarte y sentir que estás a mi lado.
+            </p>
+
+            <p>
+                Hay momentos en los que simplemente quisiera poder
+                estar contigo y abrazarte fuerte, sin tener que decir
+                absolutamente nada.
+            </p>
+
+            <p>
+                Y quiero que sepas algo:
+                <strong>te necesito en mi vida.</strong>
+            </p>
+
+            <p>
+                Necesito tu cariño, tus abrazos, tus palabras y esos
+                momentos que solamente tú puedes hacer especiales.
+            </p>
+
+            <p>
+                Quizás esto sea solamente una página que abriste
+                desde tu teléfono, pero detrás de cada palabra hay
+                sentimientos completamente reales.
+            </p>
+
+            <p>
+                No hice esto para impresionarte.
+                Lo hice porque quería dejarte un pequeño recuerdo
+                de lo mucho que significas para mí.
+            </p>
+
+            <p>
+                Gracias por existir.
+                Gracias por llegar a mi vida.
+                Y gracias por permitirme amarte.
+            </p>
+
+            <p class="destacado">
+                Te amo, te extraño y te necesito. ❤️
+            </p>
+
+        </div>
+
+
+        <div class="final">
+
+            🌻 Nayeli Pamela 🌻
+
+            <br><br>
+
+            Eres una persona demasiado especial para mí.
+
+            <br><br>
+
+            ❤️ Te amo muchísimo ❤️
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<script>
+
+/* =========================
+   FECHA DE INICIO
+========================= */
+
+const inicioFecha =
+    new Date("2026-05-25T00:00:00");
+
+
+/* =========================
+   ABRIR CARTA
+========================= */
+
+function abrirCarta(){
+
+    const pantalla =
+        document.getElementById("inicio");
+
+    const carta =
+        document.getElementById("cartaPagina");
+
+    pantalla.classList.add("ocultar");
+
+    setTimeout(function(){
+
+        pantalla.style.display="none";
+
+        carta.classList.remove("oculto");
+
+        lluviaAmor();
+
+    },1500);
+
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+function actualizarTiempo(){
+
+    const ahora = new Date();
+
+    const diferencia =
+        ahora - inicioFecha;
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000*60*60*24)
+        );
+
+    const horas =
+        Math.floor(
+            (diferencia /
+            (1000*60*60)) % 24
+        );
+
+    const minutos =
+        Math.floor(
+            (diferencia /
+            (1000*60)) % 60
+        );
+
+    document.getElementById("tiempo").innerHTML =
+        dias +
+        " días, " +
+        horas +
+        " horas y " +
+        minutos +
+        " minutos ❤️";
+}
+
+actualizarTiempo();
+
+setInterval(
+    actualizarTiempo,
+    60000
+);
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+function crearCorazon(){
+
+    const corazon =
+        document.createElement("div");
+
+    corazon.className="corazon";
+
+    const corazones=[
+        "❤️",
+        "💛",
+        "💕",
+        "💖"
+    ];
+
+    corazon.innerHTML =
+        corazones[
+            Math.floor(
+                Math.random()*corazones.length
+            )
+        ];
+
+    corazon.style.left =
+        Math.random()*100+"vw";
+
+    corazon.style.fontSize =
+        (15+Math.random()*20)+"px";
+
+    corazon.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(
+        ()=>corazon.remove(),
+        10000
+    );
+}
+
+
+/* =========================
+   PÉTALOS AMARILLOS
+========================= */
+
+function crearPetalo(){
+
+    const petalo =
+        document.createElement("div");
+
+    petalo.className="petalo";
+
+    petalo.innerHTML="🌼";
+
+    petalo.style.left =
+        Math.random()*100+"vw";
+
+    petalo.style.fontSize =
+        (15+Math.random()*18)+"px";
+
+    petalo.style.animationDuration =
+        (5+Math.random()*6)+"s";
+
+    document.body.appendChild(petalo);
+
+    setTimeout(
+        ()=>petalo.remove(),
+        12000
+    );
+}
+
+
+/* =========================
+   LLUVIA DE AMOR
+========================= */
+
+function lluviaAmor(){
+
+    for(let i=0;i<35;i++){
+
+        setTimeout(
+            crearCorazon,
+            i*100
+        );
+
+        setTimeout(
+            crearPetalo,
+            i*140
+        );
+    }
+
+    setInterval(
+        crearCorazon,
+        1200
+    );
+
+    setInterval(
+        crearPetalo,
+        1700
+    );
+}
+
+</script>
+
+</body>
+</html>
