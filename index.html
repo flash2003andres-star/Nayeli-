@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Nayeli Pamela 💜</title>
+  <title>Para el amor de mi vida 💜</title>
   <style>
     * {
       box-sizing: border-box;
@@ -59,7 +59,7 @@
 
     h1 {
       color: #f3e5f5;
-      font-size: clamp(30px, 7vw, 50px);
+      font-size: clamp(30px, 7vw, 48px);
       margin: 15px 0;
       text-shadow: 0 0 15px rgba(225, 190, 231, 0.4);
     }
@@ -113,7 +113,7 @@
       margin-top: 15px;
       background: rgba(255, 255, 255, 0.96);
       border-radius: 28px;
-      padding: 40px 28px;
+      padding: 50px 32px;
       box-shadow: 0 20px 50px rgba(22, 2, 38, 0.45);
       text-align: center;
       position: relative;
@@ -121,52 +121,52 @@
       color: #333;
     }
 
+    /* TULIPANES EN LAS ESQUINAS */
+    .tulipan-esquina {
+      position: absolute;
+      font-size: 32px;
+      user-select: none;
+      pointer-events: none;
+      filter: drop-shadow(0 2px 4px rgba(106, 27, 154, 0.2));
+    }
+
+    .arriba-izquierda {
+      top: 16px;
+      left: 18px;
+      transform: rotate(-15deg);
+    }
+
+    .arriba-derecha {
+      top: 16px;
+      right: 18px;
+      transform: rotate(15deg);
+    }
+
+    .abajo-izquierda {
+      bottom: 16px;
+      left: 18px;
+      transform: rotate(15deg);
+    }
+
+    .abajo-derecha {
+      bottom: 16px;
+      right: 18px;
+      transform: rotate(-15deg);
+    }
+
     .carta h2 {
       color: #6a1b9a;
       font-size: 32px;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    /* ZORO */
-    .zoro-contenedor {
-      margin: 10px auto 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: flotar 3.5s ease-in-out infinite;
-    }
-
-    .zoro-img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #ab47bc;
-      box-shadow: 0 8px 20px rgba(106, 27, 154, 0.3);
-    }
-
-    .zoro-tag {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #6a1b9a;
-      font-weight: bold;
-    }
-
-    /* EMOJIS ENAMORADOS */
-    .decoracion-emojis {
-      font-size: 20px;
-      letter-spacing: 5px;
-      margin: 12px 0;
-      user-select: none;
+      margin-top: 10px;
+      margin-bottom: 25px;
     }
 
     .mensaje-caja {
       background: #faf5fc;
       border: 2px dashed #ce93d8;
       border-radius: 20px;
-      padding: 25px 22px;
-      margin: 15px 0;
+      padding: 28px 24px;
+      margin: 20px 0;
     }
 
     .mensaje {
@@ -260,9 +260,9 @@
     }
 
     @media(max-width: 600px) {
-      .carta { padding: 25px 16px; }
+      .carta { padding: 40px 18px; }
+      .tulipan-esquina { font-size: 24px; }
       .mensaje { font-size: 16.5px; line-height: 1.7; text-align: left; }
-      .zoro-img { width: 140px; height: 140px; }
       .fraseFinal { font-size: 17px; }
       .btn-abrir { font-size: 18px; padding: 14px 30px; }
     }
@@ -274,7 +274,7 @@
   <section id="inicio">
     <div class="contenidoInicio">
       <div class="icono-portada">💜</div>
-      <h1>Para Nayeli Pamela</h1>
+      <h1>Para el amor de mi vida</h1>
       <p class="subtitulo">Tengo algo preparado para ti...</p>
       <button class="btn-abrir" onclick="abrirCarta()">Para ti ❤️</button>
     </div>
@@ -283,29 +283,20 @@
   <!-- CARTA -->
   <section id="cartaPagina" class="oculto">
     <div class="carta">
+
+      <!-- Tulipanes en las 4 esquinas -->
+      <div class="tulipan-esquina arriba-izquierda">🌷💐</div>
+      <div class="tulipan-esquina arriba-derecha">💐🌷</div>
+      <div class="tulipan-esquina abajo-izquierda">🌷💐</div>
+      <div class="tulipan-esquina abajo-derecha">💐🌷</div>
+
       <h2>Felices 5 Meses, Mi Amor 💖</h2>
-
-      <!-- Zoro haciendo corazón -->
-      <div class="zoro-contenedor">
-        <img class="zoro-img" src="https://media1.tenor.com/m/V1oE6Yv6B50AAAAC/zoro-heart.gif" alt="Zoro haciendo corazón" onerror="this.src='https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/roronoa-zoro-finger-heart-one-piece-an-an.jpg'">
-        <span class="zoro-tag">Hasta Zoro se rinde ante ti ⚔️💚🫶</span>
-      </div>
-
-      <!-- Emojis enamorados arriba -->
-      <div class="decoracion-emojis">
-        😍 🥰 😍 🥰 😍 🥰 😍 🥰 😍
-      </div>
 
       <!-- Mensaje principal -->
       <div class="mensaje-caja">
         <p class="mensaje">
           felices 5 meses mi amor, estoy muy enamorado de ti pero sobre todo de llevar casi la mitad del año, estoy seguro que lo lograremos, quiero que captes el amor, el cariño, y lo mucho que te he extrañado mucho mi amor precioso, eres una de las cosas más lindas y maravillosas que tengo, que gracias a ti he sentido lo que es volverse a enamorar, lo que es saber pensar, extrañar, necesitar y amar tanto a alguien, que aunque la cosa se ponga difícil, aunque a veces nosotros ni nos entendamos, quiero que sepas que lo eres todo para mí, no sabes los muchos escenarios que me imagino contigo, ya al sea ver un tiktok, un reel, un anuncio o incluso cuando escucho una música, estas ahí en mi mente, acompañándome día y noche, incluso durmiendo, incluso en la mañana menos brillante, siempre haces que los rayos del sol salgan y todo sea bonito alrededor, eso lo haces tu, por qué eres únicamente el amor de mi vida y la mujer con la cual quiero compartir el presente, del futuro y toda mi vida, felices 5 meses mi amor hermoso❤️😍
         </p>
-      </div>
-
-      <!-- Emojis enamorados abajo -->
-      <div class="decoracion-emojis">
-        🥰 😍 🥰 😍 🥰 😍 🥰 😍 🥰
       </div>
 
       <!-- Frase final -->
@@ -328,8 +319,8 @@
   </section>
 
   <script>
-    // Fecha de inicio de su relación
-    const inicioFecha = new Date("2026-04-25T00:00:00");
+    // Fecha de inicio exacta: 25 de mayo de 2026
+    const inicioFecha = new Date("2026-05-25T00:00:00");
 
     function abrirCarta() {
       const pantalla = document.getElementById("inicio");
